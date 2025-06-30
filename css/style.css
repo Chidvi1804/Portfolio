@@ -1153,8 +1153,9 @@ footer {
     padding: 0.5rem 1rem;
   }
   /* ========== FINAL MOBILE OPTIMIZATION ========== */
+/* ========================= FINAL FULL MOBILE FIX ========================= */
 @media (max-width: 768px) {
-  /* Remove notebook-style margins on mobile */
+  /* Completely remove margin and spiral on mobile */
   body::before,
   body::after,
   body > .spiral::before,
@@ -1162,41 +1163,48 @@ footer {
     display: none !important;
   }
 
-  /* Slightly reduce the overall scale of content */
-  .page {
-    transform: scale(0.94);
-    transform-origin: top center;
-    padding: 1rem;
-    margin: 1rem auto;
+  /* Add space on left and right to avoid sticking to edges */
+  body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
-  .navbar {
-    transform: scale(0.94);
-    transform-origin: top center;
+  .page,
+  .hero-wrapper,
+  .about-wrapper,
+  .experience-wrapper,
+  .portfolio-wrapper,
+  .contact-wrapper,
+  .carousel-wrapper,
+  .quick-links-wrapper {
+    margin: 0 auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
     width: 100% !important;
-    margin: 0 auto;
+    max-width: 100% !important;
   }
 
-  /* Center and fix Skills section */
-  .skills-carousel-section {
-    transform: scale(0.95);
-    transform-origin: top center;
-    padding: 1rem 0.5rem;
-    margin: 0 auto;
-  }
-
-  .carousel-container {
-    padding: 0 0.5rem;
-  }
-
+  /* Center skill cards and avoid left pushing */
   .carousel {
-    justify-content: center;
+    justify-content: center !important;
   }
 
   .skill-card {
     margin: 0 auto;
-    min-width: 220px;
-    max-width: 250px;
+  }
+
+  /* Adjust image frame padding to avoid left lean */
+  .hero-image img,
+  .about-image img,
+  .experience-image img,
+  .portfolio-image img,
+  .contact-image img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Reduce overall scaling for smaller screen */
+  html {
+    font-size: 90%; /* scale down slightly */
   }
 }
-
