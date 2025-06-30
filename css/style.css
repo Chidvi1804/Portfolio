@@ -1153,103 +1153,47 @@ footer {
     padding: 0.5rem 1rem;
   }
   /* =============== MOBILE-FRIENDLY FIXES =============== */
+/* ================= FINAL MOBILE FIX ================ */
 @media (max-width: 768px) {
+  /* Remove side margin and spiral effects */
   body::before,
   body::after,
   body > .spiral::before,
   body > .punch-holes::before {
-    display: none;
+    display: none !important;
   }
 
-  .page,
-  .navbar,
-  .hero-wrapper,
-  .about-wrapper,
-  .experience-wrapper,
-  .portfolio-wrapper,
-  .contact-wrapper,
-  .quick-links-wrapper,
-  .carousel-wrapper {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  /* Remove any left margin for main page layout */
+  .page {
     margin-left: 0 !important;
-    margin-right: 0 !important;
+    padding: 1rem !important;
     width: 100% !important;
   }
 
-  .page {
-    padding: 2rem 1rem !important;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Ensure Skills section is centered and readable */
+  .skills-section {
     padding: 1rem !important;
+    margin: 0 auto;
   }
 
-  .hero-text h1,
-  .about-text h2,
-  .timeline h2,
-  .portfolio h2,
-  .quick-links h2,
-  .contact h2,
-  .skills-title {
-    font-size: 1.3rem !important;
-  }
-
-  .btn {
-    font-size: 0.9rem !important;
-    padding: 0.5rem 1rem !important;
-  }
-
-  .carousel {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-
-  .portfolio-grid,
-  .quick-links-grid {
-    grid-template-columns: 1fr 1fr;
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    padding: 0;
   }
 
-  .portfolio-card,
-  .quick-links-card {
-    min-height: 240px;
+  .skills-card {
+    flex: 1 1 120px;
+    min-width: 100px;
+    max-width: 140px;
+    text-align: center;
   }
 
-  .portfolio-card img,
-  .quick-links-card img {
-    height: 80px;
+  .skills-card img {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto;
   }
-
-  .hero-image img,
-  .about-image img,
-  .experience-image img,
-  .portfolio-image img,
-  .contact-image img {
-    width: 160px !important;
-  }
-}
-
-@media (max-width: 500px) {
-  .portfolio-grid,
-  .quick-links-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-card img,
-  .quick-links-card img {
-    height: 70px;
-  }
-
-  .hero-image img,
-  .about-image img,
-  .experience-image img,
-  .portfolio-image img,
-  .contact-image img {
-    width: 140px !important;
-  }
-
-
 }
